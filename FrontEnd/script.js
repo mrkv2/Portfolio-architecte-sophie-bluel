@@ -1,5 +1,6 @@
 const galleryElement = document.querySelector('.gallery');
-const categories =document.querySelector('.categories')
+const filtersElement = document.querySelector('.filters');
+
 
 let works = []
 let categories = []
@@ -13,17 +14,13 @@ let categories = []
 const getWorks = async () => {
     const response = await fetch('http://localhost:5678/api/works')
     const data = await response.json()
-    // if (response.status === 404) {
-    //     throw new Error({message: `Ca n'existe pas bordel`})
-    // }
     works.push(...data)
 }
 
 const getCategories = async () => {
-    const response= await fetch('http://localhost:5678/api/categories')
-    const data = await response.json()
-    categories.push(...data)
-
+   const response= await fetch('http://localhost:5678/api/categories')
+  const data = await response.json()
+  categories.push(...data)
 }
 
 const createWorks = (data) => {
@@ -45,19 +42,46 @@ const createWorks = (data) => {
 }
 
 const createButton= (data) => {
+    const buttonElement = document.createElement('button');
 
+    buttonElement.textContent = data.name;
+
+    if (data.id === 0) {
+        buttonElement.classList.add('test')
+    }
+
+    buttonElement.addEventListener('click', () => {
+        const allFilters = document.querySelectorAll('.filters button');
+       
+        allFilters.forEach(button => button.classList.remove('test'))
+        buttonElement.classList.add('test')
+
+        if (data.id === 0) {
+            galleryElement.innerHTML = ""
+            return createWorks(works)
+        }
+
+        const filteredWorks = works.filter(work => work.categoryId === data.id)
+        galleryElement.innerHTML = ""
+        createWorks(filteredWorks)
+
+    })
+
+    filtersElement.appendChild(buttonElement)
 }
 
 const handleFilters = (data) => {
-    // appeller la fonction createButton()
+    createButton({name: 'Tous', id: 0})
+    data.forEach(category => createButton(category))
 }
 
 const init = async () => {
     try {
-        console.log(works)
+        
         await getWorks()
-        console.log(works)
+        await getCategories()
         createWorks(works)
+        handleFilters(categories)
 
     } catch(error) {
         console.log(error)
