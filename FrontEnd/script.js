@@ -42,12 +42,12 @@ const createWorks = (data) => {
 }
 
 const createButton= (data) => {
-    const buttonElement = document.createElement('filtersjs','filter-button');
+    const buttonElement = document.createElement('filtersjs');
 
     buttonElement.textContent = data.name;
 
     if (data.id === 0) {
-        buttonElement.classList.add('filtersjs')
+        buttonElement.classList.add('filter-button')
     } else {
         buttonElement.classList.add('filter-button');
     }

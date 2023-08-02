@@ -222,6 +222,124 @@ footer nav ul {
 	justify-content: flex-end;
 	margin: 2em
 }
+/**************************************************** PAGE FILLE**/
+/** PAGE CONNEXION**/
 
 
+.connection {
+	display: flex;	
+	padding-top: 90px;
+	align-items: center;
+	flex-direction: column;
+	height: 100vh;
+	flex-grow: 1;
+	
+	margin: 0;
+  }
+.login-container {
+	max-width: 400px;
+	margin: 0 auto;
+	padding: 20px;
+	
+	border-radius: 5px;
+	
+	
+  }
+
+  .login-container h2 {
+	text-align: center;
+	margin-bottom: 20px;
+  }
+
+  .form-group {
+	margin-bottom: 20px;
+  }
+
+  .form-group label,
+  .form-group input {
+	display: block;
+	width: 100%;
+	padding-bottom: 10px;
+	
+	}
+
+.login-container {
+	max-width: 400px;
+	margin: 0 auto;
+	padding: 20px;
+	background-color: #fff;
+	border-radius: 5px;
+	/**box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);**/
+	
+  }
+
+  .login-container h2 {
+	text-align: center;
+	margin-bottom: 20px;
+  }
+
+  .form-group {
+	margin-bottom: 20px;
+  }
+
+  .form-group label,
+  .form-group input {
+	display: block;
+	width: 140%;
+	
+  }
+
+  .form-group input {
+	padding: 8px;
+	border: 0px solid #ccc;
+	border-radius: 20px;
+	box-shadow: 6px 4px 4px rgb(94, 91, 91);
+	
+  }
+
+  .form-group input[type="submit"] {
+	
+	background-color: #1D6154;
+	color: #fff;
+	cursor: pointer;
+	width: 120px;
+	
+  }
+
+  .form-group input[type="submit"]:hover {
+	background-color: #0cecc3;
+  }
+
+  .message {
+	text-align: center;
+	color: red;
+  }
+
+
+  
+
+  .form-group input {
+	padding: 8px;
+	border: 0px solid #ccc;
+	border-radius: 5px;
+  }
+
+  .form-group input[type="submit"] {
+	background-color: #1D6154;
+	color: #fff;
+	cursor: pointer;
+  }
+
+  .form-group input[type="submit"]:hover {
+	background-color: #0cecc3;
+  }
+
+  .message {
+	text-align: center;
+	color: red;
+  }
+  .center-button {
+    display: flex;
+    justify-content: center;
+}
 
