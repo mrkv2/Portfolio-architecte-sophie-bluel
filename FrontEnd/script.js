@@ -42,19 +42,21 @@ const createWorks = (data) => {
 }
 
 const createButton= (data) => {
-    const buttonElement = document.createElement('button');
+    const buttonElement = document.createElement('filtersjs','filter-button');
 
     buttonElement.textContent = data.name;
 
     if (data.id === 0) {
-        buttonElement.classList.add('test')
+        buttonElement.classList.add('filtersjs')
+    } else {
+        buttonElement.classList.add('filter-button');
     }
 
     buttonElement.addEventListener('click', () => {
-        const allFilters = document.querySelectorAll('.filters button');
+        const allFilters = document.querySelectorAll('filtersjs');
        
-        allFilters.forEach(button => button.classList.remove('test'))
-        buttonElement.classList.add('test')
+        allFilters.forEach(button => button.classList.remove('filtersjs'))
+        buttonElement.classList.add('filtersjs')
 
         if (data.id === 0) {
             galleryElement.innerHTML = ""

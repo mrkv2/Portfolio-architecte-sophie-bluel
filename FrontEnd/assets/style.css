@@ -125,9 +125,46 @@ li:hover {
 	text-align: center;
 	margin-bottom: 1em;
 }
+.filters {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin-bottom: 30px;
+	gap: 20px;
+	
+	
+}
+.filter-button {
+	display: flex;
+	background-color: #ffff;
+	color: rgb(22, 143, 82);
+	border-radius: 20px;
+	
+	border-width:2px;
+ border-style:solid;
+ border-color:b#1D6154;
+	
+	align-items: center;
+	justify-content: center;
+	padding: 15px;
+	margin-bottom: 30px;
+
+}
+.filtersjs {
+	display: flex;
+	background-color: #1D6154;
+	color: rgb(248, 243, 243);
+	border-radius: 25px;
+	padding: 15px;
+	margin-bottom: 30px;
+
+}
+
+
+
 .gallery {
 	width: 100%;
-	display: grid;
+	display: grid;	
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-column-gap: 20px;
 	grid-row-gap: 20px;
@@ -186,8 +223,5 @@ footer nav ul {
 	margin: 2em
 }
 
-.test {
-	background-color: greenyellow;
-	color: red;
-}
+
 
