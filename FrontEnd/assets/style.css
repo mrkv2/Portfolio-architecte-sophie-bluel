@@ -343,3 +343,12 @@ footer nav ul {
     justify-content: center;
 }
 
+.error {
+	display: none;
+	background-color: red;
+	color: white;
+	height: 30px;
+	width: 100%;
+	border-radius: 5px;
+}
+

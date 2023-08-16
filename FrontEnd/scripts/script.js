@@ -45,11 +45,10 @@ const createButton= (data) => {
     const buttonElement = document.createElement('filtersjs');
 
     buttonElement.textContent = data.name;
+    buttonElement.classList.add('filter-button')
 
     if (data.id === 0) {
-        buttonElement.classList.add('filter-button')
-    } else {
-        buttonElement.classList.add('filter-button');
+        buttonElement.classList.add('filtersjs')
     }
 
     buttonElement.addEventListener('click', () => {
@@ -91,3 +90,6 @@ const init = async () => {
 }
 
 init()
+
+
+// comment recuperer le token, pour afficher la partie admin
