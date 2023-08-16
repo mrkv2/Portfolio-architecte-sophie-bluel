@@ -35,6 +35,7 @@ formLoginElement.addEventListener('submit', async (e) => {
     if (response.status === 200) {
         // webstorage || sessionStorage
         // redirection en JS ==> window.location
+        window.location.href = '/dashboard'; 
 
     }
 })
