@@ -1,9 +1,14 @@
 const galleryElement = document.querySelector('.gallery');
 const filtersElement = document.querySelector('.filters');
+const adminPanelElement = document.querySelector('.admin-panel');
+const modalButtonOneElement = document.querySelector('#button-modal-1');
 
 
 let works = []
 let categories = []
+const isLogged = sessionStorage.getItem('token')
+
+console.log(isLogged)
 
 // fetch()
 // asynchrone      async await
@@ -93,3 +98,8 @@ init()
 
 
 // comment recuperer le token, pour afficher la partie admin
+if (isLogged !== null) {
+    console.log('partie admin ici')
+    adminPanelElement.style.display = 'flex'
+    modalButtonOneElement.style.display = 'inline-block'
+}

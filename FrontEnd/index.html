@@ -11,6 +11,10 @@
 	<link rel="stylesheet" href="./assets/style.css">
 </head>
 <body>
+	<div class="admin-panel">
+		<span>icone Mode Edition</span>
+		<button type="button">publier les changements</button>
+	</div>
 <header>
 	<h1>Sophie Bluel <span>Architecte d'inteérieur</span></h1>
 	<nav>
@@ -37,6 +41,7 @@
 	</section>
 	<section id="portfolio">
 		<h2>Mes Projets</h2>
+		<a href="#" id="button-modal-1">icone Modifier</a>
 		<div class="filters"></div>
 		<div class="gallery">
 		</div>
@@ -64,6 +69,18 @@
 		</ul>
 	</nav>
 </footer>
+<!-- modal en test-->
+
+	<aside id="myModal" class="modal">
+	  <div class="modal-content">
+		<span class="close">&times;</span>
+		<p>Bonjour Sophie</p>
+		<p>changer de mot de passe</p>
+	  </div>
+	</aside>
+
 <script src="./scripts/script.js"></script>
+<script src="./scripts/modal.js"></script>
+
 </body>
 </html>

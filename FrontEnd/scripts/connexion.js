@@ -22,7 +22,8 @@ formLoginElement.addEventListener('submit', async (e) => {
     const data = new FormData(formLoginElement)
     const response = await login(data)
     // recuperer le body de la response
-    console.log(response)
+    const user = await response.json()
+    console.log(user)
 
     if (response.status === 404 || response.status === 401) {
         errorElement.style.display = 'block';
@@ -33,9 +34,11 @@ formLoginElement.addEventListener('submit', async (e) => {
     }
 
     if (response.status === 200) {
+        console.log('test')
         // webstorage || sessionStorage
         // redirection en JS ==> window.location
-        window.location.href = '/dashboard'; 
+        sessionStorage.setItem('token', user.token)
+        window.location.assign('/index.html'); 
 
     }
 })
