@@ -377,7 +377,7 @@ footer nav ul {
 	cursor: pointer;
   }
 
-  .admin-panel {
+  /*.admin-panel {
 	height: 59px;
 	width: 100%;
 	color: white;
@@ -386,7 +386,7 @@ footer nav ul {
 	align-items: center;
 	gap: 20px;
 	background-color: black;
-  }
+  }**/
 
   #portfolio {
 	position: relative;
@@ -400,3 +400,36 @@ footer nav ul {
 	color: black;
 	display: none;
   }
+  /** mise en place admin panel ***/
+  .admin-panel {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 10px;
+	width: 100%;
+	background-color: black;
+}
+
+.admin-panel span {
+	margin-right: 10px;
+	color: white;
+}
+
+.admin-panel button {
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	background-color: white;
+	color: black;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+
+.admin-panel button:hover {
+	background-color: #f0f0f0;
+}
+
+.admin-panel button:focus {
+	outline: none;
+	box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5);
+}

@@ -1,12 +1,3 @@
-// $(".open-modal").click(function() {
-//     $("#myModal").show();
-//   });
-  
-//   $(".close").click(function() {
-//     $("#myModal").hide();
-//   });
-
-
 const myModalElement = document.querySelector('#myModal');
 
 
