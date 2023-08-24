@@ -1,5 +1,6 @@
 const galleryElement = document.querySelector('.gallery');
 const filtersElement = document.querySelector('.filters');
+const firstModalContent = document.querySelector('.first-modal-content');
 const adminPanelElement = document.querySelector('.admin-panel');
 const modalButtonOneElement = document.querySelector('#button-modal-1');
 
@@ -13,6 +14,12 @@ console.log(isLogged)
 // fetch()
 // asynchrone      async await
 // appendChild()
+
+// fetch('url', {
+//     headers: {
+//         'Authorization': `Bearer ${isLogged}`
+//     }
+// })
 
 
 
@@ -43,6 +50,24 @@ const createWorks = (data) => {
         figureElement.appendChild(figCaptionElement)
 
         galleryElement.appendChild(figureElement)
+    })
+}
+
+const createModalWorks = (data) => {
+    data.forEach(work => {
+        const figureElement = document.createElement('figure')
+        const imgElement = document.createElement('img')
+        const figCaptionElement = document.createElement('figcaption')
+
+        imgElement.src = work.imageUrl
+        imgElement.alt = work.title
+
+        figCaptionElement.textContent = 'editer'
+
+        figureElement.appendChild(imgElement)
+        figureElement.appendChild(figCaptionElement)
+
+        firstModalContent.appendChild(figureElement)
     })
 }
 
@@ -88,6 +113,7 @@ const init = async () => {
         await getCategories()
         createWorks(works)
         handleFilters(categories)
+        createModalWorks(works)
 
     } catch(error) {
         console.log(error)
@@ -99,7 +125,8 @@ init()
 
 // comment recuperer le token, pour afficher la partie admin
 if (isLogged !== null) {
-    console.log('partie admin ici')
-    adminPanelElement.style.display = 'flex'
-    modalButtonOneElement.style.display = 'inline-block'
+    console.log('partie admin ici');
+    adminPanelElement.style.display = 'flex';
+    modalButtonOneElement.style.display = 'inline-block';
+    filtersElement.style.display = 'none';
 }
