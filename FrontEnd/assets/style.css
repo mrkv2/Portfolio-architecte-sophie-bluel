@@ -352,7 +352,7 @@ footer nav ul {
 	border-radius: 5px;
 }
 
-/** mise en place du modal ***/
+/** mise en place du modal 01 ***/
 .modal {
 	display: none;
 	position: fixed;
@@ -428,6 +428,22 @@ footer nav ul {
 	color: black;
 	display: none;
   }
+/** mise en place du modal 02 ***/
+
+.validerajoutphoto {
+    display: block;          
+    margin: 20px auto 0;    
+    padding: 10px 20px;     
+    border-radius: 10px;    
+    background-color: #00ff37; 
+    color: #FFFFFF;         
+    border: none;           
+    cursor: pointer; 
+}
+.validerAjoutPhoto:hover {
+    background-color: #449430; 
+}
+
   /** mise en place admin panel ***/
   .admin-panel {
 	display: none;
