@@ -42,7 +42,7 @@
 	</section>
 	<section id="portfolio">
 		<h2>Mes Projets</h2>
-		<a href="#myModal" id="button-modal-1">icone Modifier</a>
+		<a href="#myModal" id="button-modal-1"><i class="fa-regular fa-pen-to-square"></i> Modifier</a>
 		<div class="filters"></div>
 		<div class="gallery">
 		</div>
@@ -77,13 +77,14 @@
 		<div class="modal-header">
 			<button type="button" class="close" id="close-first-modal">&times;</button>
 		</div>
-		<p>Bonjour Sophie</p>
-		<p>changer de mot de passe</p>
-		<div class="first-modal-content">
+		<div class="titre_modal_1"><p>Galerie Photo</p></div>
+				<div class="first-modal-content">
 		</div>
 		<div class="modal-footer">
-			<a href="#myModal_2" id="button-modal-2"> Ajouter une photo</a>
+			<hr>
+			<button class="ajouterunephoto"><a href="#myModal_2" id="button-modal-2">Ajouter une photo</a></button>
 		</div>
+		<div class="supprphoto"><p>Supprimez la photo</p></div>
 	  </div>
 	</aside>
 	<aside id="myModal_2" class="modal">
@@ -93,10 +94,32 @@
 				<button type="button" class="close" id="return-first-modal"><i class="fa-solid fa-arrow-left"></i></button>
 			</div>
 		  <p>Ajout de photo</p>
-		  <p>titre</p>
-		  <p>categories</p>
-		  <button type="button" class="validerajoutphoto" id="valder-ajout-photo">Valider</button>
-		</div>
+		  <form action="/traiter-soumission" method="POST" enctype="multipart/form-data">
+			<div class="upload-container">
+				<div class="upload-icon-frame">
+					<div class="upload-icon">
+						<i class="fa-duotone fa-image fa-xl"></i>
+					</div>
+					<label for="photo-input" class="file-label">
+						Ajouter une photo
+					</label>
+				</div>
+				<input type="file" id="photo-input" name="photo" accept=".jpg, .png" required>
+				<p class="upload-label">jpg, png: 4 Mo max</p>
+		
+				<div class="input-group">
+					<label for="titre" class="input-label">Titre :</label>
+					<input type="text" id="titre" name="titre" required>
+				</div>
+		
+				<div class="input-group">
+					<label for="categorie" class="input-label">Catégorie :</label>
+					<input type="text" id="categorie" name="categorie" required>
+				</div>
+		
+				<button class="validerajoutphoto" type="submit">Valider</button>
+			</div>
+		</form>
 	  </aside>
 
 <script src="./scripts/script.js"></script>

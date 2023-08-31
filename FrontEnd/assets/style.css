@@ -385,13 +385,22 @@ footer nav ul {
 	justify-content: space-between;
 	align-items: center;
   }
+  .titre_modal_1 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 30px;
 
-
+  }
+  .modal-footer hr {
+	width: 60%;
+}
 .first-modal-content {
 	display: grid;
-	grid-template-columns: repeat(4, 1fr);
+	grid-template-columns: repeat(5, 1fr);
 	gap: 20px;
 	margin-bottom: 20px;
+	padding: 50px 200px;
 }
 
 .first-modal-content figure {
@@ -427,23 +436,173 @@ footer nav ul {
 	text-decoration: none;
 	color: black;
 	display: none;
+  }			
+  .ajouterunephoto {
+	display: block;          
+    margin: 20px auto 0;    
+	width: 237px;
+	height: 36px;
+	left: 600px;
+	top: 1267px;   
+    border-radius: 60px;    
+    background-color: #1D6154;             
+    border: 1px;  
+	cursor: pointer;          
+    
   }
+
+
+
+
+
+
+
+
+
+  
+  .ajouterunephoto a {
+	font-size: 20px;
+	color: #FFFFFF;
+	padding-left: 35px;
+	padding-right: 35px;
+	font-family: 'Syne';
+font-style: normal;
+font-weight: 700;
+font-size: 14px;
+line-height: 17px;
+/* identical to box height */
+text-align: center;
+  }
+  .validerajoutphoto:hover {
+    background-color: #263f20; 
+	color: #FFFFFF;
+}
+.supprphoto {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	font-family: 'Syne';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 17px;
+	padding-top:15px ;
+	font-style: normal;
+	color: #D65353;
+}
 /** mise en place du modal 02 ***/
 
 .validerajoutphoto {
     display: block;          
     margin: 20px auto 0;    
-    padding: 10px 20px;     
+    padding: 10px 60px;     
     border-radius: 10px;    
-    background-color: #00ff37; 
+    background-color: #656b64; 
     color: #FFFFFF;         
     border: none;           
     cursor: pointer; 
 }
 .validerAjoutPhoto:hover {
-    background-color: #449430; 
+    background-color: #263f20; 
+}
+/** modal 2 submit photo**/
+.upload-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+}
+.upload-icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f5;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    width: 262px;
+    height: 169px;
+    margin: 0 auto 10px;
 }
 
+.upload-icon-frame {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f5f5f5;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    width: fit-content;
+    padding: 10px;
+    margin: 0 auto 10px;
+}
+
+.upload-icon {
+    width: 72px;
+    height: 72px;
+    margin-bottom: 10px;
+}
+
+.file-label {
+    font-size: 14px;
+    color: #777;
+    cursor: pointer;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.input-label {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.add-photo-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.upload-label {
+    font-size: 14px;
+    color: #777;
+    margin-top: 10px;
+}
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.input-label {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
   /** mise en place admin panel ***/
   .admin-panel {
 	display: none;

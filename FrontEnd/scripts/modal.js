@@ -38,4 +38,8 @@ returnFirstModalElement.addEventListener('click', () => {
     secondModal.style.display = 'none';
 
 })
+/* fonction delete work*/
+function deleteWork(workId) {
+
+}
 

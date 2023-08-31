@@ -55,20 +55,27 @@ const createWorks = (data) => {
 
 const createModalWorks = (data) => {
     data.forEach(work => {
-        const figureElement = document.createElement('figure')
-        const imgElement = document.createElement('img')
-        const figCaptionElement = document.createElement('figcaption')
+        const figureElement = document.createElement('figure');
+        const imgElement = document.createElement('img');
+        const figCaptionElement = document.createElement('figcaption');
+        const deleteIconElement = document.createElement('i');  // Cree icone
 
-        imgElement.src = work.imageUrl
-        imgElement.alt = work.title
+        imgElement.src = work.imageUrl;
+        imgElement.alt = work.title;
 
-        figCaptionElement.textContent = 'editer'
+        figCaptionElement.textContent = 'editer';
 
-        figureElement.appendChild(imgElement)
-        figureElement.appendChild(figCaptionElement)
+        // Set attributes and classes for the delete icon
+        deleteIconElement.className = 'fa fa-trash delete-icon';
+        deleteIconElement.setAttribute('data-work-id', work.id);  // work id
+        deleteIconElement.title = 'Supprimer cette photo';
 
-        firstModalContent.appendChild(figureElement)
-    })
+        figureElement.appendChild(imgElement);
+        figureElement.appendChild(figCaptionElement);
+        figureElement.appendChild(deleteIconElement);  // suppr l'icon
+
+        firstModalContent.appendChild(figureElement);
+    });
 }
 
 const createButton= (data) => {
