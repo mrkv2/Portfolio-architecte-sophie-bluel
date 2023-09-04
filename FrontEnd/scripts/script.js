@@ -58,7 +58,8 @@ const createModalWorks = (data) => {
         const figureElement = document.createElement('figure');
         const imgElement = document.createElement('img');
         const figCaptionElement = document.createElement('figcaption');
-        const deleteIconElement = document.createElement('i');  // Cree icone
+        const deleteIconElement = document.createElement('i');  // Cree icone (;)
+        const button = document.createElement('button')
 
         imgElement.src = work.imageUrl;
         imgElement.alt = work.title;
@@ -70,12 +71,34 @@ const createModalWorks = (data) => {
         deleteIconElement.setAttribute('data-work-id', work.id);  // work id
         deleteIconElement.title = 'Supprimer cette photo';
 
+        button.appendChild(deleteIconElement)
+        button.className = "trashIcon";
+
+
+        button.addEventListener('click', async () => {
+            const response = await deleteWork(work.id)
+            console.log(response);
+
+            if (response.status === 204) {
+                updateDOM()
+            }
+        })
+
         figureElement.appendChild(imgElement);
         figureElement.appendChild(figCaptionElement);
-        figureElement.appendChild(deleteIconElement);  // suppr l'icon
+        figureElement.appendChild(button);  // suppr l'icon
 
         firstModalContent.appendChild(figureElement);
     });
+}
+
+const deleteWork = async (id) => {
+    return await fetch(`http://localhost:5678/api/works/${id}`, {
+        method: 'DELETE',
+        headers: {
+            'Authorization': `Bearer ${isLogged}`
+        }
+    })
 }
 
 const createButton= (data) => {
@@ -113,6 +136,16 @@ const handleFilters = (data) => {
     data.forEach(category => createButton(category))
 }
 
+const updateDOM = async () => {
+    works = [];
+    galleryElement.innerHTML = ""
+    firstModalContent.innerHTML = ""
+
+    await getWorks();
+    createWorks(works)
+    createModalWorks(works)
+}
+
 const init = async () => {
     try {
         
@@ -137,3 +170,6 @@ if (isLogged !== null) {
     modalButtonOneElement.style.display = 'inline-block';
     filtersElement.style.display = 'none';
 }
+
+
+// URL.createObjectUrl(tonInputFile)

@@ -406,12 +406,29 @@ footer nav ul {
 .first-modal-content figure {
 	width: 100px;
 	height: 150px;
+	position: relative;
 }
 
 .first-modal-content figure img {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
+}
+
+.trashIcon {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	color: white;
+	background-color: black;
+	width: 20px;
+	height: 20px;
+	border: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 5px;
+	cursor: pointer;
 }
 
   /*.admin-panel {
@@ -529,25 +546,37 @@ line-height: 17px;
 .upload-icon-frame {
     display: flex;
     flex-direction: column;
+	justify-content: space-between;
     align-items: center;
-    background-color: #f5f5f5;
-    border: 2px solid #ccc;
     border-radius: 10px;
-    width: fit-content;
+    width: 420px;
+	height: 169px;
     padding: 10px;
     margin: 0 auto 10px;
+	background-color: #e8f1f6;
 }
 
 .upload-icon {
-    width: 72px;
-    height: 72px;
-    margin-bottom: 10px;
+    font-size: 76px;
+	color: #b9c5cc;
+	height: 50%;
+}
+
+#photo-input {
+	display: none;
 }
 
 .file-label {
     font-size: 14px;
-    color: #777;
+    background-color: #cbd6dc;
     cursor: pointer;
+	width: 173px;
+	height: 36px;
+	border-radius: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #306685;
 }
 
 .input-group {
@@ -602,7 +631,21 @@ input[type="text"] {
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 14px;
+	
 }
+/** preview image modal2 ***/
+#preview-image {
+	display: none;
+	justify-content: center;
+	
+	width: 50%;
+	height: 50%;
+	max-width: 100%;
+	max-height: 100%;
+	
+	object-fit: cover;
+}
+
   /** mise en place admin panel ***/
   .admin-panel {
 	display: none;
