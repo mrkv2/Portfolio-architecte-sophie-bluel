@@ -5,6 +5,10 @@ const closeSecondModalElement = document.querySelector('#close-second-modal');
 const openSecondModalElement = document.querySelector('#button-modal-2');
 const returnFirstModalElement = document.querySelector('#return-first-modal');
 
+// token pour mes works
+
+const token = sessionStorage.getItem('token');
+
 modalButtonOneElement.addEventListener('click', (event) => {
     event.preventDefault()
     myModalElement.style.display = 'flex';
@@ -30,37 +34,43 @@ openSecondModalElement.addEventListener('click', (event) => {
 })
 
 closeSecondModalElement.addEventListener('click', () => {
+    cleanForm()
     secondModal.style.display = 'none';
 })
 
 returnFirstModalElement.addEventListener('click', () => {
     myModalElement.style.display = 'flex';
+    cleanForm()
     secondModal.style.display = 'none';
 
 })
 
 const formPhotoElement = document.querySelector('#form-photo');
 
-formPhotoElement.addEventListener('submit', async (event) => {
-    console.log("Form submitted");
-    event.preventDefault();
-
-    const formData = new FormData(formPhotoElement);
-    formData.append('image', yourImageFile); 
-    formData.append('title', 'Your Work Title');
-    formData.append('category', 1); 
-
-    fetch('http://localhost:5678/api/works', {
+const postWork = async (formData) => {
+    
+   return await fetch('http://localhost:5678/api/works', {
         method: 'POST',
         headers: {
             'Authorization': `Bearer ${token}`
         },
         body: formData
     })
-    .then(response => response.json())
-    .then(data => console.log(data))
-    .catch(error => console.error('Error:', error));
-        
+}
+
+formPhotoElement.addEventListener('submit', async (event) => {
+    console.log("Form submitted");
+    event.preventDefault();
+
+    const formData = new FormData(formPhotoElement);
+    const response = await postWork(formData)
+
+        console.log(response)
+
+        if (response.status === 201) {
+            cleanForm()
+            updateDOM()
+        }
     
 });
 // gére la preview des uploads
@@ -76,6 +86,7 @@ imageInput.addEventListener('change', function() {
 
         reader.addEventListener('load', function() {
             uploadIcon.style.display = 'none';  // cache l image
+            document.querySelector('.file-label').style.display = "none"
             previewImage.setAttribute('src', this.result);
             previewImage.style.display = 'block';  // voir l'image
         });
@@ -105,20 +116,25 @@ photoInput.addEventListener('change', checkFormInputs);
 titreInput.addEventListener('input', checkFormInputs);
 categorieSelect.addEventListener('change', checkFormInputs);
 
-// token pour mes works
+const cleanForm = () => {
+    formPhotoElement.reset()
+    previewImage.style.display = 'none';
+    document.querySelector('.file-label').style.display = "flex"
+    uploadIcon.style.display = 'block';
+}
 
-const token = sessionStorage.getItem('token');
 
-if (token) {
-    fetch('http://localhost:5678/api/works', {
-        headers: {
+
+// if (token) {
+//     fetch('http://localhost:5678/api/works', {
+//         headers: {
             
-            'Authorization': `Bearer ${token}`
-        },
-        body: JSON.stringify(works),
-    });
-} else {
-    console.log ('pas bon toto')
-}  
+//             'Authorization': `Bearer ${token}`
+//         },
+//         body: JSON.stringify(works),
+//     });
+// } else {
+//     console.log ('pas bon toto')
+// }  
 
 

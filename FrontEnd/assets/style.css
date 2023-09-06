@@ -554,6 +554,7 @@ line-height: 17px;
     padding: 10px;
     margin: 0 auto 10px;
 	background-color: #e8f1f6;
+	position: relative;
 }
 
 .upload-icon {
@@ -617,6 +618,8 @@ input[type="text"] {
     display: flex;
     flex-direction: column;
     margin-top: 10px;
+	width: 420px;
+	align-items: flex-start;
 }
 
 .input-label {
@@ -631,17 +634,22 @@ input[type="text"] {
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 14px;
+	width: 100%;
+	border: none;
+	height: 51px;
+	box-shadow: 0px 4px 14px 0px #00000017;
+
 	
 }
 /** preview image modal2 ***/
 #preview-image {
 	display: none;
 	justify-content: center;
-	
-	width: 50%;
-	height: 50%;
-	max-width: 100%;
-	max-height: 100%;
+	position: absolute;
+	top: 0;
+	left: 155px;
+	width: 30%;
+	height: 100%;
 	
 	object-fit: cover;
 }

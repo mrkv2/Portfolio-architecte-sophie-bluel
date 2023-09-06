@@ -1,135 +1,183 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-	<meta charset="UTF-8">
-	<title>Sophie Bluel - Architecte d'intérieur</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">         
-	<meta name="description" content="">
-	<link rel="stylesheet" href="./assets/style.css">
-</head>
-<body>
-	<div class="admin-panel">
-        <span><i class="fas fa-edit" aria-hidden="true"></i> Mode Édition</span>
-        <button type="button" aria-label="Publier les changements">Publier les changements</button>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Sophie Bluel - Architecte d'intérieur</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="./assets/style.css" />
+  </head>
+  <body>
+    <div class="admin-panel">
+      <span><i class="fas fa-edit" aria-hidden="true"></i> Mode Édition</span>
+      <button type="button" aria-label="Publier les changements">
+        Publier les changements
+      </button>
     </div>
-<header>
-	<h1>Sophie Bluel <span>Architecte d'inteérieur</span></h1>
-	<nav>
-		<ul>
-			<li><a href="http://127.0.0.1:5502/index.html">Acceuil</a></li>
-			<li><a href="http://127.0.0.1:5502/index.html#portfolio">Projets</a></li>
-			<li><a href="http://127.0.0.1:5502/index.html#contact">Contact</a></li>
-			<li><a href="http://127.0.0.1:5502/connexion.html">Login</a> </li>
-			<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
-		</ul>
-	</nav>
-</header>
-<main>
-	<section id="introduction">
-		<figure>
-			<img src="./assets/images/sophie-bluel.png" alt="Sophie Bluel Architecte d'Intérieur">
-		</figure>
-		<article>
-			<h2>Designer d'espace</h2>
-			<p>Je raconte votre histoire, je valorise vos idées. Je vous accompagne de la conception à la livraison finale du chantier.</p>
-			<p>Chaque projet sera étudié en commun, de façon à mettre en valeur les volumes, les matières et les couleurs dans le respect de l’esprit des lieux et le choix adapté des matériaux. Le suivi du chantier sera assuré dans le souci du détail, le respect du planning et du budget.</p>
-			<p>En cas de besoin, une équipe pluridisciplinaire peut-être constituée : architecte DPLG, décorateur(trice)</p>
-		</article>
-	</section>
-	<section id="portfolio">
-		<h2>Mes Projets</h2>
-		<a href="#myModal" id="button-modal-1"><i class="fa-regular fa-pen-to-square"></i> Modifier</a>
-		<div class="filters"></div>
-		<div class="gallery">
-		</div>
-	</section>
-	<section id="contact">
-		<h2>Contact</h2>
-		<p>Vous avez un projet ? Discutons-en !</p>
-		<form action="#" method="post">
-			<label for="name">Nom</label>
-			<input type="text" name="name" id="name">
-			<label for="email">Email</label>
-			<input type="email" name="email" id="email">
-			<label for="message">Message</label>
-			<textarea name="message" id="message" cols="30" rows="10"></textarea>
-			<input type="submit" value="Envoyer">
-		</form>
-	</section>
+    <header>
+      <h1>Sophie Bluel <span>Architecte d'inteérieur</span></h1>
+      <nav>
+        <ul>
+          <li><a href="http://127.0.0.1:5502/index.html">Acceuil</a></li>
+          <li>
+            <a href="http://127.0.0.1:5502/index.html#portfolio">Projets</a>
+          </li>
+          <li>
+            <a href="http://127.0.0.1:5502/index.html#contact">Contact</a>
+          </li>
+          <li><a href="http://127.0.0.1:5502/connexion.html">Login</a></li>
+          <li><img src="./assets/icons/instagram.png" alt="Instagram" /></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section id="introduction">
+        <figure>
+          <img
+            src="./assets/images/sophie-bluel.png"
+            alt="Sophie Bluel Architecte d'Intérieur"
+          />
+        </figure>
+        <article>
+          <h2>Designer d'espace</h2>
+          <p>
+            Je raconte votre histoire, je valorise vos idées. Je vous accompagne
+            de la conception à la livraison finale du chantier.
+          </p>
+          <p>
+            Chaque projet sera étudié en commun, de façon à mettre en valeur les
+            volumes, les matières et les couleurs dans le respect de l’esprit
+            des lieux et le choix adapté des matériaux. Le suivi du chantier
+            sera assuré dans le souci du détail, le respect du planning et du
+            budget.
+          </p>
+          <p>
+            En cas de besoin, une équipe pluridisciplinaire peut-être constituée
+            : architecte DPLG, décorateur(trice)
+          </p>
+        </article>
+      </section>
+      <section id="portfolio">
+        <h2>Mes Projets</h2>
+        <a href="#myModal" id="button-modal-1"
+          ><i class="fa-regular fa-pen-to-square"></i> Modifier</a
+        >
+        <div class="filters"></div>
+        <div class="gallery"></div>
+      </section>
+      <section id="contact">
+        <h2>Contact</h2>
+        <p>Vous avez un projet ? Discutons-en !</p>
+        <form action="#" method="post">
+          <label for="name">Nom</label>
+          <input type="text" name="name" id="name" />
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" />
+          <label for="message">Message</label>
+          <textarea name="message" id="message" cols="30" rows="10"></textarea>
+          <input type="submit" value="Envoyer" />
+        </form>
+      </section>
+    </main>
 
-</main>
+    <footer>
+      <nav>
+        <ul>
+          <li>Mentions Légales</li>
+        </ul>
+      </nav>
+    </footer>
+    <!-- modal en test-->
 
-<footer>
-	<nav>
-		<ul>
-			<li>Mentions Légales</li>
-		</ul>
-	</nav>
-</footer>
-<!-- modal en test-->
+    <aside id="myModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" id="close-first-modal">
+            &times;
+          </button>
+        </div>
+        <div class="titre_modal_1"><p>Galerie Photo</p></div>
+        <div class="first-modal-content"></div>
+        <div class="modal-footer">
+          <hr />
+          <button class="ajouterunephoto">
+            <a href="#myModal_2" id="button-modal-2">Ajouter une photo</a>
+          </button>
+        </div>
+        <div class="supprphoto"><p>Supprimez la photo</p></div>
+      </div>
+    </aside>
+    <aside id="myModal_2" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" id="close-second-modal">
+            &#10006;
+          </button>
+          <button type="button" class="close" id="return-first-modal">
+            <i class="fa-solid fa-arrow-left"></i>
+          </button>
+        </div>
+        <p>Ajout de photo</p>
+        <form id="form-photo" method="POST" enctype="multipart/form-data">
+          <div class="upload-container">
+            <div class="upload-icon-frame">
+              <i class="fa-regular fa-image upload-icon"></i>
+              <img
+                id="preview-image"
+                src="#"
+                alt="Prévisualisation de l'image"
+              />
+              <label for="photo-input" class="file-label">
+                + Ajouter une photo
+              </label>
+              <input
+                type="file"
+                id="photo-input"
+                name="image"
+                accept=".jpg, .png"
+                required
+              />
+              <p class="upload-label">jpg, png: 4 Mo max</p>
+            </div>
 
-	<aside id="myModal" class="modal">
-	  <div class="modal-content">
-		<div class="modal-header">
-			<button type="button" class="close" id="close-first-modal">&times;</button>
-		</div>
-		<div class="titre_modal_1"><p>Galerie Photo</p></div>
-				<div class="first-modal-content">
-		</div>
-		<div class="modal-footer">
-			<hr>
-			<button class="ajouterunephoto"><a href="#myModal_2" id="button-modal-2">Ajouter une photo</a></button>
-		</div>
-		<div class="supprphoto"><p>Supprimez la photo</p></div>
-	  </div>
-	</aside>
-	<aside id="myModal_2" class="modal">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" id="close-second-modal">&times;</button>
-				<button type="button" class="close" id="return-first-modal"><i class="fa-solid fa-arrow-left"></i></button>
-			</div>
-		  <p>Ajout de photo</p>
-		  <form id="form-photo" method="POST" enctype="multipart/form-data">
-			<div class="upload-container">
-				<div class="upload-icon-frame">
+            <div class="input-group">
+              <label for="titre" class="input-label">Titre :</label>
+              <input type="text" id="titre" name="title" required />
+            </div>
 
-						<i class="fa-regular fa-image upload-icon"></i>
-						<img id="preview-image" src="#" alt="Prévisualisation de l'image">
-					<label for="photo-input" class="file-label">
-						+ Ajouter une photo
-						
-					</label>
-					<input type="file" id="photo-input" name="image" accept=".jpg, .png" required>
-					<p class="upload-label">jpg, png: 4 Mo max</p>
-				</div>
-		
-				<div class="input-group">
-					<label for="titre" class="input-label">Titre :</label>
-					<input type="text" id="titre" name="title" required>
-				</div>
-		
-				<div class="input-group">
-					<label for="categorie" class="input-label">Catégorie :</label>
-					<select  id="categorie" name="category" required>
-						<option value="1">Catégorie 1</option>
-    <option value="2">Catégorie 2</option>
-    <option value="3">Catégorie 3</option>
-					</select>
-				</div>
-		
-				<button class="validerajoutphoto" type="submit" disabled>Valider</button>
-			</div>
-		</form>
-	  </aside>
+            <div class="input-group">
+              <label for="categorie" class="input-label">Catégorie :</label>
+              <select id="categorie" name="category" required>
+				<option value="0"></option>
+                <option value="1">Catégorie 1</option>
+                <option value="2">Catégorie 2</option>
+                <option value="3">Catégorie 3</option>
+              </select>
+            </div>
 
-<script src="./scripts/script.js"></script>
-<script src="./scripts/modal.js"></script>
-<script src="https://kit.fontawesome.com/65a8893e54.js" crossorigin="anonymous"></script>
+            <button class="validerajoutphoto" type="submit" disabled>
+              Valider
+            </button>
+          </div>
+        </form>
+      </div>
+    </aside>
 
-</body>
+    <script src="./scripts/script.js"></script>
+    <script src="./scripts/modal.js"></script>
+    <script
+      src="https://kit.fontawesome.com/65a8893e54.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
