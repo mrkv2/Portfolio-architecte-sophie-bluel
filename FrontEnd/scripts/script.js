@@ -66,7 +66,7 @@ const createModalWorks = (data) => {
 
         figCaptionElement.textContent = 'editer';
 
-        // Set attributes and classes for the delete icon
+        // detelet de l icon
         deleteIconElement.className = 'fa fa-trash delete-icon';
         deleteIconElement.setAttribute('data-work-id', work.id);  // work id
         deleteIconElement.title = 'Supprimer cette photo';

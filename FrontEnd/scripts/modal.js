@@ -42,28 +42,26 @@ returnFirstModalElement.addEventListener('click', () => {
 const formPhotoElement = document.querySelector('#form-photo');
 
 formPhotoElement.addEventListener('submit', async (event) => {
+    console.log("Form submitted");
     event.preventDefault();
 
     const formData = new FormData(formPhotoElement);
+    formData.append('image', yourImageFile); 
+    formData.append('title', 'Your Work Title');
+    formData.append('category', 1); 
 
-    try {
-        const response = await fetch('/works', {  
-            method: 'POST',
-            body: formData
-        });
-
-        if (response.ok) {
-            const result = await response.json();
-            console.log(result);
-            
-        } else {
-            console.error('Error submitting form:', response.statusText);
-            
-        }
-    } catch (error) {
-        console.error('There was an error:', error);
+    fetch('http://localhost:5678/api/works', {
+        method: 'POST',
+        headers: {
+            'Authorization': `Bearer ${token}`
+        },
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.error('Error:', error));
         
-    }
+    
 });
 // gére la preview des uploads
 const imageInput = document.querySelector('#photo-input');
@@ -88,11 +86,39 @@ imageInput.addEventListener('change', function() {
         previewImage.style.display = 'none';  // cache image
     }
 });
+//gere le disable de valider if 3entree on
+const photoInput = document.querySelector('#photo-input');
+const titreInput = document.querySelector('#titre');
+const categorieSelect = document.querySelector('#categorie');
+const validerButton = document.querySelector('.validerajoutphoto');
 
+function checkFormInputs() {
+    // Vérifie si tous les champs sont remplis
+    if (photoInput.files.length > 0 && titreInput.value && categorieSelect.value) {
+        validerButton.removeAttribute('disabled');
+    } else {
+        validerButton.setAttribute('disabled', 'disabled');
+    }
+}
+// mes ecouteurs
+photoInput.addEventListener('change', checkFormInputs);
+titreInput.addEventListener('input', checkFormInputs);
+categorieSelect.addEventListener('change', checkFormInputs);
 
+// token pour mes works
 
+const token = sessionStorage.getItem('token');
 
-
-
+if (token) {
+    fetch('http://localhost:5678/api/works', {
+        headers: {
+            
+            'Authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify(works),
+    });
+} else {
+    console.log ('pas bon toto')
+}  
 
 
