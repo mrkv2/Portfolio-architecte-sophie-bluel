@@ -310,6 +310,12 @@ footer nav ul {
 	background-color: #0cecc3;
   }
 
+  .form-group a {
+	display: flex;
+	justify-content: center;
+	text-decoration: underline;
+  }
+
   .message {
 	text-align: center;
 	color: red;
@@ -322,16 +328,24 @@ footer nav ul {
 	padding: 8px;
 	border: 0px solid #ccc;
 	border-radius: 5px;
+	width: 400px;
+	height: 51px;
+	box-shadow: 0px 4px 14px 0px #00000017;
+	
   }
 
   .form-group input[type="submit"] {
 	background-color: #1D6154;
 	color: #fff;
 	cursor: pointer;
+	width: 179px;
+	height: 36px;
+	border-radius: 60px;
   }
 
   .form-group input[type="submit"]:hover {
-	background-color: #0cecc3;
+	
+	opacity: 99%;
   }
 
   .message {
@@ -487,7 +501,6 @@ font-style: normal;
 font-weight: 700;
 font-size: 14px;
 line-height: 17px;
-/* identical to box height */
 text-align: center;
   }
   .validerajoutphoto:hover {
@@ -518,10 +531,26 @@ line-height: 17px;
     color: #FFFFFF;         
     border: none;           
     cursor: pointer; 
+	border-radius: 60px;
+	width: 237px;
+	height: 36px;
 }
 .validerAjoutPhoto:hover {
     background-color: #263f20; 
 }
+/** test condition js sur button valider**/
+.validerajoutphoto:enabled {
+	background-color: #1d6154;
+	color: white;
+	cursor: pointer;
+		}
+.validerajoutphoto:disabled {
+	background-color: #ccc;
+	color: #888;
+	cursor: not-allowed;
+	
+
+	}
 /** modal 2 submit photo**/
 .upload-container {
     display: flex;
@@ -638,8 +667,18 @@ input[type="text"] {
 	border: none;
 	height: 51px;
 	box-shadow: 0px 4px 14px 0px #00000017;
-
 	
+}
+#categorie {
+	width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+	width: 100%;
+	border: none;
+	height: 51px;
+	box-shadow: 0px 4px 14px 0px #00000017;
 }
 /** preview image modal2 ***/
 #preview-image {
@@ -652,6 +691,10 @@ input[type="text"] {
 	height: 100%;
 	
 	object-fit: cover;
+}
+#modal-2 button[type="submit"].invalid::before {
+    content: "❌";
+    padding-right: 5px;
 }
 
   /** mise en place admin panel ***/

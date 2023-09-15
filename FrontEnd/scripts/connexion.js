@@ -1,5 +1,18 @@
+let isconnected = false; // test pour gérer le logout du site
 const formLoginElement = document.querySelector('#login');
 const errorElement = document.querySelector('.error');
+
+//mise à jour de co et deco
+//function updateconnexion() {
+//    const loginbutton= document.querySelector("#authbutton");
+//    if (isconnected) {
+ //       login.button.textcontent = "logout";
+  //  }
+  //  else {
+     //   login.button.textContent= "logon";
+   // }
+// note : dans modal voir si je peux utilsr la modal2 ou je crée un bouton de déco
+//}
 
 const login = async (data) => {
     const user = {

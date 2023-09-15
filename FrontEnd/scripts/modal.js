@@ -4,6 +4,10 @@ const closeFirstModalElement = document.querySelector('#close-first-modal');
 const closeSecondModalElement = document.querySelector('#close-second-modal');
 const openSecondModalElement = document.querySelector('#button-modal-2');
 const returnFirstModalElement = document.querySelector('#return-first-modal');
+const titleInput= document.querySelector('#title'); // gére la validation du form
+const categoryInput = document.querySelector('#categorie'); // gére la validation du form
+const imageinput = document.querySelector('#photo-input');// gére la validation du form
+const submitbutton = document.querySelector('#validerajoutphoto');// gére la validation du form
 
 // token pour mes works
 
@@ -122,7 +126,27 @@ const cleanForm = () => {
     document.querySelector('.file-label').style.display = "flex"
     uploadIcon.style.display = 'block';
 }
+// Gestion du passage en vert du bouton valider modal2
+const checkRequiredFields = () => {
+    titleInput.addEventListener('input', checkRequiredFields);
+categoryInput.addEventListener('change', checkRequiredFields);
+imageInput.addEventListener('input', checkRequiredFields);
+    console.log("verif condition valider");
+    let categoryValue = parseInt(categoryInput.value, 10);
 
+    if (titleInput.value && categoryValue > 0 && categoryValue <= 20 && imageInput.files.length > 0) {
+        submitButton.style.backgroundColor = '#1D6154';  // change couleur
+        submitButton.disabled = false;  // Enable the button
+        submitButton.classList.remove('invalid');
+    } else {
+        submitButton.style.backgroundColor = ''; // enleve la couleur origine
+        submitButton.disabled = true;  // desactive le bouton
+        submitButton.classList.add('invalid');
+    }
+};
+        titleInput.addEventListener('input', checkRequiredFields);
+        categoryInput.addEventListener('input', checkRequiredFields);
+        imageInput.addEventListener('input', checkRequiredFields);
 
 
 // if (token) {

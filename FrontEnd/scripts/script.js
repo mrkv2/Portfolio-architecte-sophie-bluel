@@ -43,6 +43,7 @@ const createWorks = (data) => {
 
         imgElement.src = work.imageUrl
         imgElement.alt = work.title
+        imgElement.crossOrigin = "Anonymous"
 
         figCaptionElement.textContent = work.title
 
@@ -63,6 +64,7 @@ const createModalWorks = (data) => {
 
         imgElement.src = work.imageUrl;
         imgElement.alt = work.title;
+        imgElement.crossOrigin = "Anonymous"
 
         figCaptionElement.textContent = 'editer';
 
@@ -173,3 +175,4 @@ if (isLogged !== null) {
 
 
 // URL.createObjectUrl(tonInputFile)
+// modif pour la validation
