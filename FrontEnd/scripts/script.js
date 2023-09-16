@@ -1,3 +1,4 @@
+//let isConnected = false; // test pour gérer le logout du site
 const galleryElement = document.querySelector('.gallery');
 const filtersElement = document.querySelector('.filters');
 const firstModalContent = document.querySelector('.first-modal-content');
@@ -10,7 +11,18 @@ let works = []
 let categories = []
 const isLogged = sessionStorage.getItem('token')
 
+console.log(isLogged)
+// login vs logout
+//mise à jour de co et deco mode 2 
+function codecoauthaction() {
+    const authButton = document.getElementById('authButton');
+    if (isConnected){
+        isConnected=false;
+        authButton.textContent="Login";
 
+    } else { openSecondModalElement('modal-1');
+    }
+}
 console.log(isLogged)
 // test logique login logout
 const token = sessionStorage.getItem('token');
@@ -26,7 +38,11 @@ authButton.addEventListener('click', () => {
         authButton.textContent = "Login";
     }
 });
+document.getElementById('authButton').addEventListener('click',codecoauthaction);
+console.log ('login ok')
 
+
+// début des works
 const getWorks = async () => {
     const response = await fetch('http://localhost:5678/api/works')
     const data = await response.json()
@@ -47,7 +63,6 @@ const createWorks = (data) => {
 
         imgElement.src = work.imageUrl
         imgElement.alt = work.title
-        imgElement.crossOrigin = "Anonymous"
 
         figCaptionElement.textContent = work.title
 
@@ -68,7 +83,6 @@ const createModalWorks = (data) => {
 
         imgElement.src = work.imageUrl;
         imgElement.alt = work.title;
-        imgElement.crossOrigin = "Anonymous"
 
         figCaptionElement.textContent = 'editer';
 
@@ -178,4 +192,5 @@ if (isLogged !== null) {
 }
 
 
-
+// URL.createObjectUrl(tonInputFile)
+// modif pour la validation

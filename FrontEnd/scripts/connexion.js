@@ -1,20 +1,12 @@
-let isConnected = false; // test pour gérer le logout du site
+
 
 const formLoginElement = document.querySelector('#login');
 const errorElement = document.querySelector('.error');
 
-//mise à jour de co et deco mode 2 
-function codecoauthaction() {
-    const authButton = document.getElementById('authButton');
-    if (isConnected){
-        isConnected=false;
-        authButton.textContent="Login";
 
-    } else { openSecondModalElement('modal-1');
-    }
-}
-document.getElementById('authButton').addEventListener('click',codecoauthaction);
-console.log ('login ok')
+
+
+
 
 const login = async (data) => {
     const user = {
@@ -54,7 +46,6 @@ formLoginElement.addEventListener('submit', async (e) => {
                
         // webstorage || sessionStorage
         // redirection en JS ==> window.location
-        authButton.textContent = "Logout";
         sessionStorage.setItem('token', user.token)  
         
         isConnected = true;

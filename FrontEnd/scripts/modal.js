@@ -6,20 +6,16 @@ const openSecondModalElement = document.querySelector('#button-modal-2');
 const returnFirstModalElement = document.querySelector('#return-first-modal');
 const titleInput= document.querySelector('#title'); // gére la validation du form
 const categoryInput = document.querySelector('#categorie'); // gére la validation du form
-//const modalButtonOneElement = document.querySelector('#button-modal-1');
 const imageinput = document.querySelector('#photo-input');// gére la validation du form
 const submitbutton = document.querySelector('#validerajoutphoto');// gére la validation du form
 
-
-
 // token pour mes works
 
-//const token = sessionStorage.getItem('token');
+const modalToken = sessionStorage.getItem('token');
 
 modalButtonOneElement.addEventListener('click', (event) => {
     event.preventDefault()
     myModalElement.style.display = 'flex';
-    
 })
 
 myModalElement.addEventListener('click', (e) => {
@@ -34,7 +30,12 @@ closeFirstModalElement.addEventListener('click', () => {
     myModalElement.style.display = 'none';
 })
 
+openSecondModalElement.addEventListener('click', (event) => {
+    event.preventDefault()
+    myModalElement.style.display = 'none';
+    secondModal.style.display = 'flex';
 
+})
 
 closeSecondModalElement.addEventListener('click', () => {
     cleanForm()
@@ -76,11 +77,10 @@ formPhotoElement.addEventListener('submit', async (event) => {
         }
     
 });
-
 // gére la preview des uploads
 const imageInput = document.querySelector('#photo-input');
 const previewImage = document.querySelector('#preview-image');
-const uploadIcon = document.querySelector('.upload-icon');  // select de l icon
+const uploadIcon = document.querySelector('.upload-icon');  // select de licon
 
 imageInput.addEventListener('change', function() {
     const file = this.files[0];  // select le file
@@ -101,7 +101,7 @@ imageInput.addEventListener('change', function() {
         previewImage.style.display = 'none';  // cache image
     }
 });
-//gere le disable de "valider" if les 03 entree sont ok
+//gere le disable de valider if 3entree on
 const photoInput = document.querySelector('#photo-input');
 const titreInput = document.querySelector('#titre');
 const categorieSelect = document.querySelector('#categorie');
@@ -128,7 +128,9 @@ const cleanForm = () => {
 }
 // Gestion du passage en vert du bouton valider modal2
 const checkRequiredFields = () => {
-   
+    titleInput.addEventListener('input', checkRequiredFields);
+categoryInput.addEventListener('change', checkRequiredFields);
+imageInput.addEventListener('input', checkRequiredFields);
     console.log("verif condition valider");
     let categoryValue = parseInt(categoryInput.value, 10);
 
@@ -142,14 +144,21 @@ const checkRequiredFields = () => {
         submitButton.classList.add('invalid');
     }
 };
-document.addEventListener("DOMContentLoaded", function() {
         titleInput.addEventListener('input', checkRequiredFields);
         categoryInput.addEventListener('input', checkRequiredFields);
-        imageInput.addEventListener('change', checkRequiredFields);
-    });
-        
+        imageInput.addEventListener('input', checkRequiredFields);
 
 
-
+// if (token) {
+//     fetch('http://localhost:5678/api/works', {
+//         headers: {
+            
+//             'Authorization': `Bearer ${token}`
+//         },
+//         body: JSON.stringify(works),
+//     });
+// } else {
+//     console.log ('pas bon toto')
+// }  
 
 

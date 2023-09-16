@@ -378,13 +378,14 @@ footer nav ul {
 	justify-content: center;
 	align-items: center;
   }
-  
+  .modal:target {
+    display: block; /* affiche la modal lorsque son ID est ciblé */
+}
   .modal-content {
 	background-color: white;
 	padding: 20px;
 	border-radius: 5px;
 	min-width: 50%;
-	height: 600px;
   }
   
   .close {
