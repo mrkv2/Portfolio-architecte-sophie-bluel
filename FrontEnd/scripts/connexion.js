@@ -1,18 +1,20 @@
-let isconnected = false; // test pour gérer le logout du site
+let isConnected = false; // test pour gérer le logout du site
+
 const formLoginElement = document.querySelector('#login');
 const errorElement = document.querySelector('.error');
 
-//mise à jour de co et deco
-//function updateconnexion() {
-//    const loginbutton= document.querySelector("#authbutton");
-//    if (isconnected) {
- //       login.button.textcontent = "logout";
-  //  }
-  //  else {
-     //   login.button.textContent= "logon";
-   // }
-// note : dans modal voir si je peux utilsr la modal2 ou je crée un bouton de déco
-//}
+//mise à jour de co et deco mode 2 
+function codecoauthaction() {
+    const authButton = document.getElementById('authButton');
+    if (isConnected){
+        isConnected=false;
+        authButton.textContent="Login";
+
+    } else { openSecondModalElement('modal-1');
+    }
+}
+document.getElementById('authButton').addEventListener('click',codecoauthaction);
+console.log ('login ok')
 
 const login = async (data) => {
     const user = {
@@ -28,6 +30,7 @@ const login = async (data) => {
         body: JSON.stringify(user),
     })
 }
+  
 
 formLoginElement.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -47,11 +50,20 @@ formLoginElement.addEventListener('submit', async (e) => {
     }
 
     if (response.status === 200) {
-        console.log('test')
+        console.log('connexion ok 200')
+               
         // webstorage || sessionStorage
         // redirection en JS ==> window.location
-        sessionStorage.setItem('token', user.token)
+        authButton.textContent = "Logout";
+        sessionStorage.setItem('token', user.token)  
+        
+        isConnected = true;
+    document.getElementById('authButton').textContent = "Logout";
+
         window.location.assign('/index.html'); 
+        
 
     }
+
+  
 })

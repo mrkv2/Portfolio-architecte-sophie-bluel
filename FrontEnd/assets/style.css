@@ -378,7 +378,9 @@ footer nav ul {
 	justify-content: center;
 	align-items: center;
   }
-  
+  .modal:target {
+    display: block; /* affiche la modal lorsque son ID est ciblé :) */
+}
   .modal-content {
 	background-color: white;
 	padding: 20px;
@@ -688,9 +690,8 @@ input[type="text"] {
 	top: 0;
 	left: 155px;
 	width: 30%;
-	height: 100%;
-	
-	object-fit: cover;
+	height: 100%;	
+	object-fit:fill;
 }
 #modal-2 button[type="submit"].invalid::before {
     content: "❌";

@@ -3,25 +3,29 @@ const filtersElement = document.querySelector('.filters');
 const firstModalContent = document.querySelector('.first-modal-content');
 const adminPanelElement = document.querySelector('.admin-panel');
 const modalButtonOneElement = document.querySelector('#button-modal-1');
+const authButton = document.getElementById('authButton');//login logout
 
 
 let works = []
 let categories = []
 const isLogged = sessionStorage.getItem('token')
 
+
 console.log(isLogged)
-
-// fetch()
-// asynchrone      async await
-// appendChild()
-
-// fetch('url', {
-//     headers: {
-//         'Authorization': `Bearer ${isLogged}`
-//     }
-// })
-
-
+// test logique login logout
+const token = sessionStorage.getItem('token');
+if (token) {
+    authButton.textContent = "Logout";
+} else {
+    authButton.textContent = "Login";
+}
+// gere le clic login logout
+authButton.addEventListener('click', () => {
+    if (authButton.textContent === "Logout") {
+        sessionStorage.removeItem('token');
+        authButton.textContent = "Login";
+    }
+});
 
 const getWorks = async () => {
     const response = await fetch('http://localhost:5678/api/works')
@@ -174,5 +178,4 @@ if (isLogged !== null) {
 }
 
 
-// URL.createObjectUrl(tonInputFile)
-// modif pour la validation
+
