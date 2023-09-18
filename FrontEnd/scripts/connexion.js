@@ -51,7 +51,7 @@ formLoginElement.addEventListener('submit', async (e) => {
         isConnected = true;
     document.getElementById('authButton').textContent = "Logout";
 
-        window.location.assign('/index.html'); 
+        window.location.assign('index.html'); 
         
 
     }
